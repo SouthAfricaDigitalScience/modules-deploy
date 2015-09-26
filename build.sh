@@ -18,7 +18,7 @@ if [[ ! -s tcl8.6.4-src.tar.gz ]] ; then
 fi
 
 # build tcl8
-cd tcl-8.6.4
+cd tcl8.6.4
 ./configure --prefix=${SOFT_DIR}
 make install
 
@@ -36,5 +36,5 @@ else
 fi
 tar -xvzf $SRC_DIR/$SOURCE_FILE -C $WORKSPACE
 cd $WORKSPACE/$NAME-$VERSION
-./configure --prefix $SOFT_DIR --with-ncurses=$ncurses_DIR
+./configure
 make -j 8
