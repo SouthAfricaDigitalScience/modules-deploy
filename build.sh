@@ -18,13 +18,13 @@ if [[ ! -s tcl8.6.4-src.tar.gz ]] ; then
 fi
 
 # build tcl8
-cd tcl8.6.4
+cd tcl8.6.4/unix
 ./configure --prefix=${SOFT_DIR}
 make install
 
 # check tcl
 
-
+#
 
 if [[ ! -s $SRC_DIR/$SOURCE_FILE ]] ; then
   echo "Seems we are building from scratch - preparing "
