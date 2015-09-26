@@ -9,7 +9,7 @@ echo "we'll now build $NAME-$VERSION" from $SOURCE_FILE
 module load ci
 
 # add dependencies
-module load gcc/4.9.2
+module add gcc/4.9.2
 
 # Get tcl
 if [[ ! -s tcl8.6.4-src.tar.gz ]] ; then
@@ -19,7 +19,7 @@ fi
 
 # build tcl8
 cd tcl8.6.4/unix
-./configure --prefix=${SOFT_DIR}
+./configure --prefix=${SOFT_DIR}/tcl8
 make install
 
 # check tcl
@@ -36,5 +36,6 @@ else
 fi
 tar -xvzf $SRC_DIR/$SOURCE_FILE -C $WORKSPACE
 cd $WORKSPACE/$NAME-$VERSION
-./configure
+# see http://sourceforge.net/p/modules/bugs/62/
+CPPFLAGS="-DUSE_INTERP_ERRORLINE" ./configure --with-tcl=${SOFT_DIR}/tcl8/lib
 make -j 8
