@@ -1,6 +1,8 @@
 #!/bin/bash -e
 # Script to build tcl, then modules
 # Version of modules is usually 3.2.10
+echo ${MODULESHOME}
+source /etc/profile.d/modules.sh
 SOURCE_FILE=$NAME-$VERSION.tar.gz
 echo "we'll now build $NAME-$VERSION" from $SOURCE_FILE
 # Add the module for the CI environment
