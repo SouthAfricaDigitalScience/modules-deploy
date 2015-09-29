@@ -37,5 +37,5 @@ fi
 tar -xvzf $SRC_DIR/$SOURCE_FILE -C $WORKSPACE
 cd $WORKSPACE/$NAME-$VERSION
 # see http://sourceforge.net/p/modules/bugs/62/
-CPPFLAGS="-DUSE_INTERP_ERRORLINE" ./configure --with-tcl=${SOFT_DIR}/tcl8/lib --with-tcl-ver=8.6 --without-tclx
+CPPFLAGS="-DUSE_INTERP_ERRORLINE" ./configure --with-tcl=${SOFT_DIR}/tcl8/lib --with-tcl-ver=8.6 --without-tclx --with-tlcx-ver="0.0"
 make -j 8
